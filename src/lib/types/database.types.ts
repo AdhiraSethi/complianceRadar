@@ -71,6 +71,7 @@ export interface Database {
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['sources']['Insert']>;
+        Relationships: [];
       };
       notifications: {
         Row: {
@@ -96,6 +97,7 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database['public']['Tables']['notifications']['Insert']>;
+        Relationships: [];
       };
       notification_facts: {
         Row: {
@@ -131,6 +133,7 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database['public']['Tables']['notification_facts']['Insert']>;
+        Relationships: [];
       };
       embeddings: {
         Row: {
@@ -150,6 +153,7 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database['public']['Tables']['embeddings']['Insert']>;
+        Relationships: [];
       };
       businesses: {
         Row: {
@@ -181,6 +185,7 @@ export interface Database {
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['businesses']['Insert']>;
+        Relationships: [];
       };
       matches: {
         Row: {
@@ -202,6 +207,7 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database['public']['Tables']['matches']['Insert']>;
+        Relationships: [];
       };
       tasks: {
         Row: {
@@ -233,6 +239,7 @@ export interface Database {
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['tasks']['Insert']>;
+        Relationships: [];
       };
       reminders: {
         Row: {
@@ -254,6 +261,7 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database['public']['Tables']['reminders']['Insert']>;
+        Relationships: [];
       };
       audit_log: {
         Row: {
@@ -272,8 +280,21 @@ export interface Database {
           payload?: Json;
           created_at?: string;
         };
-        Update: never;
+        Update: Partial<Database['public']['Tables']['audit_log']['Insert']>;
+        Relationships: [];
       };
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+    CompositeTypes: {
+      [_ in never]: never;
     };
   };
 }
